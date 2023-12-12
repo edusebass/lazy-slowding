@@ -46,18 +46,32 @@ export default function Home() {
     <>
       <h1 className='caret-violet-600'>Hello</h1>
       <button onClick={addNewFox}>Add new Fox</button>
-      {image.map(({id, url}) => ( 
-        <div key={id} className='p-4'>
-          <LazyImage 
-            src={url} 
-            onClick={() => console.log("foto click")} 
-            title='RandomForc'
-            className="h-64 w-auto rounded-3xl bg-gray-300"
-          />
+      <main>
+        <div className="m-4">
+          <button
+            onClick={addNewFox}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          >
+            Add new fox
+          </button>
         </div>
-      ))}
-
-      
+        {image.map(({ id, url }, index) => (
+          <div className="p-4" key={id}>
+            <LazyImage
+              src={url}
+              width="320"
+              height="auto"
+              className="mx-auto rounded-md bg-gray-300"
+              onClick={() => {
+                console.log("holi!");
+              }}
+              onLazyLoad={(img) => {
+                console.log(`Image #${index + 1} cargada. Nodo:`, img);
+              }}
+            />
+          </div>
+        ))}
+      </main>
     </>
   )
 }
