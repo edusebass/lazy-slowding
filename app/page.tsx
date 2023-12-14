@@ -2,11 +2,10 @@
 import LazyImage from '../components/LazyImage'
 import type {MouseEventHandler} from 'react'
 import {useState} from 'react'
+import { random } from 'lodash'
 
-
-
-const random = () => {
-      return Math.floor(Math.random() * 123 ) + 1
+const myRandom = () => {
+    random(1, 123)
   }
 
 const generateID = () => Math.random().toString(36).substr(2,9)
@@ -30,7 +29,7 @@ export default function Home() {
     const target = event.target
     const newImageItem: IFoxItem = {
       id: generateID(),
-      url: `https://randomfox.ca/images/${random()}.jpg`
+      url: `https://randomfox.ca/images/${myRandom()}.jpg`
     }
     setImage([
       ...image,
