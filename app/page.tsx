@@ -29,11 +29,11 @@ export default function Home() {
   }
 
   return (
-    <div className="container mx-auto mt-8">
-      <h1 className='text-4xl font-bold mb-4'>Hello</h1>
+    <div className="ml-10 container mx-auto mt-8">
+      <h1 className='text-4xl font-bold mb-4'>LazySlowing </h1>
       <button
         onClick={addNewFox}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+        className="m-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
       >
         Add new Fox
       </button>
